@@ -1,25 +1,23 @@
-import request from 'path/to/services/api.request'
-import { useEffect} from 'react'
+import request from '../../services/api.request';
+import { useState, useEffect } from 'react';
 
 function TitleData() {
-  
+  const [paragraphData, setParagraphData] = useState([]);
   useEffect(() => {
-  // No need to include your API Base URL, just the end point. 
-  // Remember your URL is in the api.constants file.
-  // Also extra documentation for this object can be found https://axios-http.com/docs/req_config
     async function getSomeDataFromBackend() {
       let options = {
-        url: /listings/, // just the endpoint
-        method: 'GET', // sets the method
-        data: { // gets sent in the body of the request
-          key: value,
-          otherKey: otherValue,
-        }
+        url: 'listings/', // endpoint for the API request
+        method: 'GET', // sets the HTTP method to GET
       } 
-      let resp = await request(options) // await the response and pass in this fancy object of request options
-      setSomeState(resp.data) // set the response 
+      let resp = await request(options);
+      setParagraphData(resp.data);
     }
-    getSomeDataFromBackend()
-  })}
+    getSomeDataFromBackend();
+  }, []);
 
-  export default TitleData
+  return (
+    <div>{paragraphData.map(item => <p key={item.id}>{item.title}</p>)}</div>
+  );
+}
+
+export default TitleData;

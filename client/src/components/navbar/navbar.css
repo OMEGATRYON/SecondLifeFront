@@ -1,0 +1,68 @@
+.navbar {
+    height: 60px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(238, 236, 236, 0.932);
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    color: rgb(255 255 255 / 90%);
+  }
+  
+  .nav-link {
+    color: rgb(255, 255, 255);
+    margin-right: 20px;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link:active {
+    color: gray !important;
+  }
+  
+  @media (max-width: 991px) {
+    .navbar-nav {
+      background-color: #fff;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 10px 0;
+      text-align: center;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease-in-out;
+    }
+  
+    .navbar-nav.show {
+      max-height: 500px;
+    }
+  
+    .navbar-collapse {
+      position: relative;
+    }
+  
+    .navbar-toggler {
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: #ffffff;
+    }
+  
+    .navbar-toggler:focus {
+      outline: none;
+    }
+  
+    .navbar-toggler-icon {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=2000');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  

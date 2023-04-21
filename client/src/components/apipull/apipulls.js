@@ -16,7 +16,13 @@ function TitleData() {
   }, []);
 
   return (
-    <div>{paragraphData.map(item => <p key={item.id}>{item.title}</p>)}</div>
+    <div>
+      {paragraphData.map(item => (
+        <div key={item.id} style={{border: "1px solid black", padding: "10px"}}>
+          <p>{item.title}</p>
+        </div>
+      ))}
+    </div>
   );
 }
 
